@@ -5,7 +5,8 @@ namespace NeuroNet.Core.ActivationFunctions
     [Serializable]
     public class SigmoidActivationFunction : ActivationFunction
     {
-        private readonly Func<double, double> _sigmoid; 
+        [NonSerialized]
+        private Func<double, double> _sigmoid; 
 
         private readonly double _alpha;
 
@@ -18,12 +19,24 @@ namespace NeuroNet.Core.ActivationFunctions
 
         public override double Calculate(double inputIntensity)
         {
+            EnsureSigmoid();
+
             return _sigmoid(inputIntensity);
         }
 
         public override double CalculateDerivative(double inputIntensity)
         {
+            EnsureSigmoid();
+
             return _alpha * _sigmoid(inputIntensity) * (1 - _sigmoid(inputIntensity));
+        }
+
+        private void EnsureSigmoid()
+        {
+            if (_sigmoid == null)
+            {
+                _sigmoid = (x => 1.0 / (1.0 + Math.Exp(-_alpha * x)));
+            }
         }
     }
 }
