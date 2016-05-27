@@ -1,0 +1,22 @@
+﻿@using NeuroNet.Core.Serialization
+
+@model IDictionary<Guid, NeuronetWithInformation>
+
+@{
+    ViewBag.Title = "Neural network browser";
+}
+
+<h2>Select the neural network</h2>
+<ol class="neuronet-list">
+    @foreach (var neuronetWithInfo in Model)
+    {
+        <li>@Html.ActionLink(neuronetWithInfo.Value.ToString(), "Recognize", "Home", new {neuronetGuid = neuronetWithInfo.Key.ToString()}, null)</li>
+    }
+</ol>
+    
+@if (!string.IsNullOrEmpty(ViewBag.LoadMessage))
+{
+    <p>
+    @ViewBag.LoadMessage
+    </p>
+}

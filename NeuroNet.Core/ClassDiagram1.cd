@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NeuroNet.Core.ActivationFunctions.ActivationFunction">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActivationFunctions\ActivationFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.ActivationFunctions.ActivationFunctionLib" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>ActivationFunctions\ActivationFunctionLib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.ActivationFunctions.SigmoidActivationFunction" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAEAAAAAAAAAiAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActivationFunctions\SigmoidActivationFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Common.Cell">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Common.Connector">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAgAACAAAAA=</HashCode>
+      <FileName>Common\Connector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Common.Helper" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAACAAAAAQAAABAEAAAAAAQBAAEIACAAAAAAAA=</HashCode>
+      <FileName>Common\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Common.Neuron">
+    <Position X="3.25" Y="3" Width="1.5" />
+    <InheritanceLine Type="NeuroNet.Core.Common.Cell" FixedFromPoint="true">
+      <Path>
+        <Point X="7.25" Y="3.528" />
+        <Point X="4.75" Y="3.528" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAQAAAAAAEAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Neuron.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ActivationFunction" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Inputs" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NeuroNet.Core.Common.SignalSource" Collapsed="true">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="NeuroNet.Core.Common.Cell" FixedFromPoint="true">
+      <Path>
+        <Point X="7.25" Y="4.25" />
+        <Point X="6.875" Y="4.25" />
+        <Point X="6.875" Y="5.596" />
+        <Point X="5.25" Y="5.596" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIACAAAAAAAAA=</HashCode>
+      <FileName>Common\SignalSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NeuroNet.Core.CommonExtensionMethods" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAgAAgAAAAAAAAAAAQAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Neuronets.Neuronet">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <AssociationLine Name="Cells" Type="NeuroNet.Core.Common.Cell" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="5" />
+        <Point X="8" Y="4.8" />
+        <Point X="8.688" Y="4.8" />
+        <Point X="8.688" Y="4.497" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAIAAAgAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Neuronets\Neuronet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cells" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NeuroNet.Core.Neuronets.NTirePerceptron">
+    <Position X="5.75" Y="7.25" Width="2" />
+    <AssociationLine Name="Input" Type="NeuroNet.Core.Common.SignalSource" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.188" Y="7.25" />
+        <Point X="6.188" Y="6.316" />
+        <Point X="5.031" Y="6.316" />
+        <Point X="5.031" Y="5.941" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Output" Type="NeuroNet.Core.Common.Neuron" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.938" Y="7.25" />
+        <Point X="5.938" Y="6.875" />
+        <Point X="3.375" Y="6.875" />
+        <Point X="3.375" Y="4.617" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAIAAgAEAAAAEAAAACAAAAUAAA=</HashCode>
+      <FileName>Neuronets\NTirePerceptron.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Input" />
+      <Property Name="Output" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NeuroNet.Core.Serialization.NeuronetWithInformation" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIQAAAACAAAEAAAAAAAAAAAAACAgAAAAAAAAIAA=</HashCode>
+      <FileName>Serialization\NeuronetWithInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Teachers.BackpropagationTeacher" Collapsed="true">
+    <Position X="11.25" Y="8.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgQAAAAAAAAIAAAAAAAEAAAAAAAgAFQAQAAAAAAAA=</HashCode>
+      <FileName>Teachers\BackpropagationTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Teachers.Teacher">
+    <Position X="11" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAA=</HashCode>
+      <FileName>Teachers\Teacher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Neuronet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.Algorithms.RandomTrainingAlgorithm" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAE=</HashCode>
+      <FileName>Training\Algorithms\RandomTtrainingAlgorithm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.Algorithms.SequentialTrainingAlgoritm" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="2.25" />
+    <InheritanceLine Type="NeuroNet.Core.Training.Algorithms.TrainingAlgorithm" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="10.096" />
+        <Point X="2.75" Y="10.096" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAA=</HashCode>
+      <FileName>Training\Algorithms\SequentialTrainingAlgoritm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.Algorithms.TrainingProgressArgs" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Training\Algorithms\TrainingAlgorithm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.Algorithms.TrainingAlgorithm">
+    <Position X="3.25" Y="7.75" Width="2" />
+    <NestedTypes>
+      <Delegate Name="NeuroNet.Core.Training.Algorithms.TrainingAlgorithm.ProgressChangedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Training\Algorithms\TrainingAlgorithm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="NeuroNet.Core.Training.Algorithms.TrainingAlgorithm.TrainingCompletedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Training\Algorithms\TrainingAlgorithm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAAEAAAAAAAAAAAAAAAAgAAAEAAACAAAAAAA=</HashCode>
+      <FileName>Training\Algorithms\TrainingAlgorithm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.ManyPairFromOneImageTrainingSet" Collapsed="true">
+    <Position X="11" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAQIAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Training\ManyPairFromOneImageTrainingSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.OnePairFromOneImageTrainingSet" Collapsed="true">
+    <Position X="10.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAQAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Training\OnePairFromOneImageTrainingSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.TrainingPair" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Training\TrainingPair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuroNet.Core.Training.TrainingSet">
+    <Position X="8.5" Y="7" Width="2" />
+    <AssociationLine Name="TrainingAlgorithm" Type="NeuroNet.Core.Training.Algorithms.TrainingAlgorithm" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.812" Y="8.747" />
+        <Point X="8.812" Y="11.16" />
+        <Point X="4.25" Y="11.16" />
+        <Point X="4.25" Y="10.785" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAIgAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Training\TrainingSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Teacher" />
+      <Property Name="TrainingAlgorithm" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="NeuroNet.Core.Common.IAllowToSetSignal" Collapsed="true">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Common\IAllowToSetSignal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NeuroNet.Core.Common.IHaveInputs" Collapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\IHaveInputs.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="NeuroNet.Core.ActivationFunctions.ActivationFunctionType" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>ActivationFunctions\ActivationFunctionLib.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NeuroNet.Core.Common.CellType" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAEABA=</HashCode>
+      <FileName>Common\CellType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

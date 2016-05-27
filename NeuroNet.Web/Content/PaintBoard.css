@@ -1,0 +1,36 @@
+﻿#paint-board
+{
+    cursor: crosshair;
+}
+
+#answer
+{
+    width: 50%;
+    
+    /*background: url('/Content/paper.jpg') no-repeat center center fixed;*/
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    
+    -webkit-box-shadow: inset 0px 0px 3px 1px #000000;
+    -moz-box-shadow: inset 0px 0px 3px 1px #000000;
+    box-shadow: inset 0px 0px 3px 1px #000000; 
+}
+
+#answer span
+{
+    font-family: "Cambria";
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.first-span-answer
+{
+}
+
+.last-span-answer
+{
+}

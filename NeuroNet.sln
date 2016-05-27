@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroNet.Core", "NeuroNet.Core\NeuroNet.Core.csproj", "{AC714522-8235-40A2-B65E-BFA2711DAEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroNet.Desktop", "NeuroNet.Desktop\NeuroNet.Desktop.csproj", "{6BF57EE3-A758-411E-84E3-AB2F79F44C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroNet.Web", "NeuroNet.Web\NeuroNet.Web.csproj", "{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AC714522-8235-40A2-B65E-BFA2711DAEE1}.Release|x86.ActiveCfg = Release|Any CPU
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Debug|x86.ActiveCfg = Debug|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Debug|x86.Build.0 = Debug|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Release|Any CPU.ActiveCfg = Release|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Release|Mixed Platforms.Build.0 = Release|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Release|x86.ActiveCfg = Release|x86
+		{6BF57EE3-A758-411E-84E3-AB2F79F44C30}.Release|x86.Build.0 = Release|x86
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

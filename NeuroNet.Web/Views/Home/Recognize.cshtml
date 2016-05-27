@@ -1,0 +1,29 @@
+﻿@using NeuroNet.Core.Serialization
+
+@model NeuronetWithInformation
+@{
+    ViewBag.Title = "Recognize!";
+}
+
+@section title{
+    <h1>@ViewBag.Information</h1>
+}
+
+@section AdditionalHeadTags
+{
+
+    <script src="@Url.Content("~/Scripts/PaintBoard.js")" type="text/javascript"></script>
+    <script type="text/javascript">createField(@Model.ImageSize.Width, @Model.ImageSize.Height);</script>
+    <link href="@Url.Content("~/Content/PaintBoard.css")" rel="stylesheet" type="text/css" />
+}
+
+<h2>Draw on canvas and see result in box below</h2>
+<p>
+    @Html.ActionLink("Return to browse", "Browse", "Home")
+    <br/>
+    <a class="clear-paint-board-button" href="#">Clear canvas</a>
+</p>
+
+<canvas id="paint-board" width="@(Model.ImageSize.Width * 10)" height="@(Model.ImageSize.Height * 10)" class="horizontal-centered"></canvas>
+<br/>
+<div id="answer" class="horizontal-centered"></div>

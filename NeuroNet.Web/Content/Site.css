@@ -1,0 +1,74 @@
+﻿*
+{
+    font-family: Cambria;
+}
+
+body
+{
+    background: url('../Content/background.jpg') no-repeat center center fixed;
+
+    margin: 0px;
+    padding: 0px;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.page
+{
+    min-width: 640px;
+    width: 70%;
+    margin: 10px auto;
+    padding: 0px;
+    
+    /*border: black solid 2px;*/
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+header
+{
+    padding: 14px 20px;
+    text-align: center;
+    border-bottom: black dotted 1px;
+    font-size: 15px;
+}
+
+footer
+{
+    padding: 14px 0px;
+    border-top: black dotted 1px;
+    text-align: center;
+}
+
+section#main
+{
+    padding: 20px 40px;
+}
+
+.horizontal-centered
+{
+    margin-left: auto;
+    margin-right: auto;
+    
+    display: block;
+}
+
+.neuronet-list > li
+{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+a
+{
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: #000000;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
