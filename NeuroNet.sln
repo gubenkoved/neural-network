@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroNet.Desktop", "NeuroNe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroNet.Web", "NeuroNet.Web\NeuroNet.Web.csproj", "{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroNet.TestConsole", "NeuroNet.TestConsole\NeuroNet.TestConsole.csproj", "{2E9C634F-7695-4B1D-9C89-CDF30EA11473}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,18 @@ Global
 		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5717D802-8BFE-4C54-A6B6-C4AB3D7FAFB7}.Release|x86.ActiveCfg = Release|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Debug|x86.Build.0 = Debug|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Release|x86.ActiveCfg = Release|Any CPU
+		{2E9C634F-7695-4B1D-9C89-CDF30EA11473}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
