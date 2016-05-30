@@ -9,9 +9,20 @@ namespace NeuroNet.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public static bool LoadingIntiated = false;
+
+        public HomeController()
+        {
+            if (!LoadingIntiated)
+            {
+                NeuronetCollection.Load();
+                LoadingIntiated = true;
+            }
+        }
+
         public ActionResult Browse()
         {
-            if (!NeuronetCollection.Loaded)
+            if (NeuronetCollection.IsLoading)
                 ViewBag.LoadMessage = "Neural networks are loading";
 
             return View(NeuronetCollection.Neuronets);

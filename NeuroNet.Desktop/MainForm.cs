@@ -111,8 +111,8 @@ namespace NeuroNet.Desktop
             Action d = delegate
             {
                 ProgressBar.Value = (int)(e.Progress * 100);
-                ProgressLabel.Text = string.Format("{0} из {1}", e.AmountOfTrainedPairs,
-                                                   e.AmountOfAllPairs);
+                ProgressLabel.Text = string.Format("{0}/{1}",
+                    e.AmountOfTrainedPairs, e.AmountOfAllPairs);
             };
 
             Invoke(d);

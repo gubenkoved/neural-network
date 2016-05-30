@@ -42,6 +42,11 @@
             this.HeightSelector = new System.Windows.Forms.NumericUpDown();
             this.WidthSelector = new System.Windows.Forms.NumericUpDown();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CurrentTrainigSpeedLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TrainingSpeedSelector = new System.Windows.Forms.TrackBar();
             this.BackpropogationTeacherSelector = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.AgesSelector = new System.Windows.Forms.NumericUpDown();
@@ -57,11 +62,6 @@
             this.PathTextBox = new System.Windows.Forms.TextBox();
             this.CahngePathButton = new System.Windows.Forms.Button();
             this.CreateButton = new System.Windows.Forms.Button();
-            this.TrainingSpeedSelector = new System.Windows.Forms.TrackBar();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.CurrentTrainigSpeedLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AmountOfOutputNeuronsSelector)).BeginInit();
@@ -70,12 +70,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.HeightSelector)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthSelector)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrainingSpeedSelector)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AgesSelector)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaxPairPerImageSelector)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrainingSpeedSelector)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -257,6 +257,55 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Teacher";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(319, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "1.0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(220, 53);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "0.01";
+            // 
+            // CurrentTrainigSpeedLabel
+            // 
+            this.CurrentTrainigSpeedLabel.AutoSize = true;
+            this.CurrentTrainigSpeedLabel.Location = new System.Drawing.Point(267, 53);
+            this.CurrentTrainigSpeedLabel.Name = "CurrentTrainigSpeedLabel";
+            this.CurrentTrainigSpeedLabel.Size = new System.Drawing.Size(11, 13);
+            this.CurrentTrainigSpeedLabel.TabIndex = 3;
+            this.CurrentTrainigSpeedLabel.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(131, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Training speed:";
+            // 
+            // TrainingSpeedSelector
+            // 
+            this.TrainingSpeedSelector.LargeChange = 10;
+            this.TrainingSpeedSelector.Location = new System.Drawing.Point(223, 21);
+            this.TrainingSpeedSelector.Maximum = 100;
+            this.TrainingSpeedSelector.Name = "TrainingSpeedSelector";
+            this.TrainingSpeedSelector.Size = new System.Drawing.Size(123, 45);
+            this.TrainingSpeedSelector.SmallChange = 5;
+            this.TrainingSpeedSelector.TabIndex = 1;
+            this.TrainingSpeedSelector.TickFrequency = 10;
+            this.TrainingSpeedSelector.Value = 10;
+            this.TrainingSpeedSelector.Scroll += new System.EventHandler(this.TrainingSpeedSelector_Scroll);
+            // 
             // BackpropogationTeacherSelector
             // 
             this.BackpropogationTeacherSelector.AutoSize = true;
@@ -335,7 +384,7 @@
             this.DarkDigitSelector.Checked = true;
             this.DarkDigitSelector.Location = new System.Drawing.Point(64, 22);
             this.DarkDigitSelector.Name = "DarkDigitSelector";
-            this.DarkDigitSelector.Size = new System.Drawing.Size(48, 17);
+            this.DarkDigitSelector.Size = new System.Drawing.Size(49, 17);
             this.DarkDigitSelector.TabIndex = 0;
             this.DarkDigitSelector.TabStop = true;
             this.DarkDigitSelector.Text = "Dark";
@@ -346,7 +395,7 @@
             this.LightDigitSelector.AutoSize = true;
             this.LightDigitSelector.Location = new System.Drawing.Point(7, 22);
             this.LightDigitSelector.Name = "LightDigitSelector";
-            this.LightDigitSelector.Size = new System.Drawing.Size(48, 17);
+            this.LightDigitSelector.Size = new System.Drawing.Size(51, 17);
             this.LightDigitSelector.TabIndex = 0;
             this.LightDigitSelector.Text = "Light";
             this.LightDigitSelector.UseVisualStyleBackColor = true;
@@ -367,7 +416,7 @@
             this.ManyPairsPerImageSelector.AutoSize = true;
             this.ManyPairsPerImageSelector.Location = new System.Drawing.Point(7, 45);
             this.ManyPairsPerImageSelector.Name = "ManyPairsPerImageSelector";
-            this.ManyPairsPerImageSelector.Size = new System.Drawing.Size(183, 17);
+            this.ManyPairsPerImageSelector.Size = new System.Drawing.Size(204, 17);
             this.ManyPairsPerImageSelector.TabIndex = 0;
             this.ManyPairsPerImageSelector.Text = "Many training pair from one image";
             this.ManyPairsPerImageSelector.UseVisualStyleBackColor = true;
@@ -378,7 +427,7 @@
             this.OnePairPerImageSelector.Checked = true;
             this.OnePairPerImageSelector.Location = new System.Drawing.Point(7, 22);
             this.OnePairPerImageSelector.Name = "OnePairPerImageSelector";
-            this.OnePairPerImageSelector.Size = new System.Drawing.Size(177, 17);
+            this.OnePairPerImageSelector.Size = new System.Drawing.Size(198, 17);
             this.OnePairPerImageSelector.TabIndex = 0;
             this.OnePairPerImageSelector.TabStop = true;
             this.OnePairPerImageSelector.Text = "One training pair from one image";
@@ -418,7 +467,6 @@
             // 
             this.PathTextBox.Location = new System.Drawing.Point(7, 22);
             this.PathTextBox.Name = "PathTextBox";
-            this.PathTextBox.ReadOnly = true;
             this.PathTextBox.Size = new System.Drawing.Size(244, 22);
             this.PathTextBox.TabIndex = 1;
             // 
@@ -428,7 +476,7 @@
             this.CahngePathButton.Name = "CahngePathButton";
             this.CahngePathButton.Size = new System.Drawing.Size(94, 23);
             this.CahngePathButton.TabIndex = 0;
-            this.CahngePathButton.Text = "Cahnge path";
+            this.CahngePathButton.Text = "Change";
             this.CahngePathButton.UseVisualStyleBackColor = true;
             this.CahngePathButton.Click += new System.EventHandler(this.CahngePathButton_Click);
             // 
@@ -441,55 +489,6 @@
             this.CreateButton.Text = "Create";
             this.CreateButton.UseVisualStyleBackColor = true;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
-            // 
-            // TrainingSpeedSelector
-            // 
-            this.TrainingSpeedSelector.LargeChange = 10;
-            this.TrainingSpeedSelector.Location = new System.Drawing.Point(223, 21);
-            this.TrainingSpeedSelector.Maximum = 100;
-            this.TrainingSpeedSelector.Name = "TrainingSpeedSelector";
-            this.TrainingSpeedSelector.Size = new System.Drawing.Size(123, 45);
-            this.TrainingSpeedSelector.SmallChange = 5;
-            this.TrainingSpeedSelector.TabIndex = 1;
-            this.TrainingSpeedSelector.TickFrequency = 10;
-            this.TrainingSpeedSelector.Value = 10;
-            this.TrainingSpeedSelector.Scroll += new System.EventHandler(this.TrainingSpeedSelector_Scroll);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(131, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Training speed:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(220, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "0.01";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(319, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(22, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "1.0";
-            // 
-            // CurrentTrainigSpeedLabel
-            // 
-            this.CurrentTrainigSpeedLabel.AutoSize = true;
-            this.CurrentTrainigSpeedLabel.Location = new System.Drawing.Point(267, 53);
-            this.CurrentTrainigSpeedLabel.Name = "CurrentTrainigSpeedLabel";
-            this.CurrentTrainigSpeedLabel.Size = new System.Drawing.Size(11, 13);
-            this.CurrentTrainigSpeedLabel.TabIndex = 3;
-            this.CurrentTrainigSpeedLabel.Text = "-";
             // 
             // CreateNeuronetForm
             // 
@@ -519,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.WidthSelector)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrainingSpeedSelector)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AgesSelector)).EndInit();
@@ -527,7 +527,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaxPairPerImageSelector)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrainingSpeedSelector)).EndInit();
             this.ResumeLayout(false);
 
         }

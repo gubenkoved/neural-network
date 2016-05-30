@@ -6,33 +6,42 @@ using System.Threading.Tasks;
 using System.Web;
 using NeuroNet.Core.Neuronets;
 using NeuroNet.Core.Serialization;
+using System.Configuration;
 
 namespace NeuroNet.Web.Models
 {
     public class NeuronetCollection
     {
-        public static bool Loaded;
-        public static IDictionary<Guid, NeuronetWithInformation> Neuronets;
+        public static bool IsLoading;
+        public static IDictionary<Guid, NeuronetWithInformation> Neuronets = new Dictionary<Guid, NeuronetWithInformation>();
 
-        static NeuronetCollection()
+        public static Task Load()
         {
-            Task.Factory.StartNew(() =>
+            string neuronetsPath = ConfigurationManager.AppSettings["NeuronetsLocation"];
+
+            return Load(neuronetsPath);
+        }
+
+        public static Task Load(string directory)
+        {
+            IsLoading = true;
+
+            var dirInfo = new DirectoryInfo(directory);
+
+            List<Task> loadTasks = new List<Task>();
+
+            foreach (var neuronetFile in dirInfo.GetFiles())
             {
-                string neuronetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                    "Neuronets");
+                string netPath = neuronetFile.FullName;
 
-                Neuronets = new Dictionary<Guid, NeuronetWithInformation>();
-
-                var dirInfo = new DirectoryInfo(neuronetsPath);
-
-                foreach (var neuronetFile in dirInfo.GetFiles())
+                loadTasks.Add(Task.Factory.StartNew(() =>
                 {
-                    Neuronets[Guid.NewGuid()] =
-                        NeuronetWithInformation.Load(neuronetFile.FullName);
-                }
+                    Neuronets[Guid.NewGuid()] = NeuronetWithInformation.Load(netPath);
+                }, TaskCreationOptions.LongRunning));
+            }
 
-                Loaded = true;
-            });
+            return Task.WhenAll(loadTasks.ToArray())
+                .ContinueWith(t => IsLoading = false);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace NeuroNet.TestConsole
     {
         static void Main(string[] args)
         {
-            var nn = NeuronetWithInformation.Load(@"D:\Repos\NeuroNet\NeuroNet.Web\Neuronets\16x16.9000.150");
+            var nn = NeuronetWithInformation.Load(@"D:\Repos\NeuroNet\data\teached\28x28.1000-600-400-200-100.nnet");
         }
     }
 }
