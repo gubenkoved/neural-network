@@ -6,7 +6,7 @@ namespace NeuroNet.Core.Common
     /// Singnal source is simple cell which just generating signal with a given intensity
     /// </summary>
     [Serializable]
-    public class SignalSource : Cell, IAllowToSetSignal
+    public class SignalSource : Cell
     {
         public SignalSource(double signalIntensity = 0.0)
         {

@@ -4,7 +4,7 @@ namespace NeuroNet.Core.ActivationFunctions
 {
     public enum ActivationFunctionType
     {
-        Sigmoid
+        Sigmoid,
     }
 
     public static class ActivationFunctionLib

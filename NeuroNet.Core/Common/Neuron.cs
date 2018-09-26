@@ -11,7 +11,7 @@ namespace NeuroNet.Core.Common
     {
         public ICollection<Connector> Inputs { get; private set; }
 
-        public ActivationFunction ActivationFunction { get; private set; }        
+        public ActivationFunction ActivationFunction { get; private set; }
 
         public Neuron(ActivationFunctionType activationFunctionType = ActivationFunctionType.Sigmoid)
         {
@@ -21,7 +21,7 @@ namespace NeuroNet.Core.Common
 
             // setting default cell type
 
-            CellType = CellType.Hidden;            
+            CellType = CellType.Hidden;
 
             // add bias connector
 

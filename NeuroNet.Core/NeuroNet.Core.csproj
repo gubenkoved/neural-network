@@ -47,7 +47,6 @@
     <Compile Include="Common\CellType.cs" />
     <Compile Include="Common\Connector.cs" />
     <Compile Include="Common\Helper.cs" />
-    <Compile Include="Common\IAllowToSetSignal.cs" />
     <Compile Include="Common\IHaveInputs.cs" />
     <Compile Include="Common\Neuron.cs" />
     <Compile Include="Common\SignalSource.cs" />

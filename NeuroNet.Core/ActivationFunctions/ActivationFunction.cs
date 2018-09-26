@@ -3,7 +3,7 @@
 namespace NeuroNet.Core.ActivationFunctions
 {
     /// <summary>
-    /// Neuron activization function
+    /// Neuron activation function
     /// </summary>
     [Serializable]
     public abstract class ActivationFunction

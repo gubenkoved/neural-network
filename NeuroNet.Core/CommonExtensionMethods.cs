@@ -7,22 +7,6 @@ namespace NeuroNet.Core
 {
     public static class CommonExtensionMethods
     {
-        public static void Times(this int numOfTimes, Action action)
-        {
-            for (int i = 0; i < numOfTimes; i++)
-            {
-                action.Invoke();
-            }
-        }
-
-        public static void Times(this int numOfTimes, Action<int> action)
-        {
-            for (int i = 0; i < numOfTimes; i++)
-            {
-                action.Invoke(i);
-            }
-        }
-
         public static T As<T> (this object obj) where T: class
         {
             if (obj is T)
@@ -35,10 +19,8 @@ namespace NeuroNet.Core
         {
             var union = new List<T>();
 
-            foreach (var enumerable in array)
-            {
+            foreach (IEnumerable<T> enumerable in array)
                 union.AddRange(enumerable);
-            }
 
             return union;
         }

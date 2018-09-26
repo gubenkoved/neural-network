@@ -16,15 +16,15 @@ namespace NeuroNet.Core.Common
         public static Connector CreateBiasConnector(this Cell thisCell, double synapticWeight = 0.0)
         {
             return new Connector()
-                       {
-                           OutputCell = thisCell,
-                           InputCell = new SignalSource(1.0), 
-                           SynapticWeight = synapticWeight
-                       };
+            {
+                OutputCell = thisCell,
+                InputCell = new SignalSource(1.0), 
+                SynapticWeight = synapticWeight
+            };
         }
 
         /// <summary>
-        /// 
+        /// Creates cell connector.
         /// </summary>
         /// <param name="thisCell">Current cell</param>
         /// <param name="inputCell">Cell which be connected with this cell</param>
@@ -33,34 +33,20 @@ namespace NeuroNet.Core.Common
         public static Connector CreateCellConnector(this Cell thisCell, Cell inputCell, double synapticWeight = 0.0)
         {
             return new Connector()
-                       {
-                           OutputCell = thisCell,
-                           InputCell = inputCell,
-                           SynapticWeight = synapticWeight
-                       };
+            {
+                OutputCell = thisCell,
+                InputCell = inputCell,
+                SynapticWeight = synapticWeight
+            };
         }
 
         public static readonly Random Random = new Random(Environment.TickCount);
-
-        public static Connector RandomizeWeight(this Connector connector, double max = 0.1)
-        {
-            connector.SynapticWeight = Random.NextDouble() * max;
-
-            return connector;
-        }
 
         public static Connector RandomizeWeight(this Connector connector, double min = 0.0, double max = 0.1)
         {
             connector.SynapticWeight = min + Random.NextDouble() * (max - min);
 
             return connector;
-        }
-
-       
-
-        public static bool ContainCell(this IEnumerable<Connector> connectors, Cell cell )
-        {
-            return connectors.FirstOrDefault(con => con.InputCell == cell) != null;
         }
 
         public static IEnumerable<Connector> GetConnectorsWhichHasCellAsInput(this IEnumerable<Cell> cells, Cell cell)
@@ -79,7 +65,7 @@ namespace NeuroNet.Core.Common
         }
 
         /// <summary>
-        /// Calculating the error energy
+        /// Calculating the error energy.
         /// </summary>
         /// <param name="d">Right answer</param>
         /// <param name="y">Network answer</param>
@@ -114,16 +100,6 @@ namespace NeuroNet.Core.Common
             vector[k] = 1.0;
 
             return vector;
-        }
-
-        public static int AmountOfInputNeurons(this Neuronet neuronet)
-        {
-            return neuronet.Cells.Count(c => c.CellType == CellType.Input);
-        }
-
-        public static int AmountOfOutputNeurons(this Neuronet neuronet)
-        {
-            return neuronet.Cells.Count(c => c.CellType == CellType.Output);
         }
 
         public static int AmountOfHiddenNeurons(this Neuronet neuronet)

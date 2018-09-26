@@ -21,7 +21,6 @@ namespace NeuroNet.Core.Neuronets
 
         private NTirePerceptron()
         {
-            
         }
 
         public static NTirePerceptron Create(int numberOfInputs, int numberOfOutputs, int[] numberOfNeuronInHiddenLayers)
@@ -33,22 +32,21 @@ namespace NeuroNet.Core.Neuronets
             IEnumerable<Neuron> output = new List<Neuron>();
             IEnumerable<Neuron>[] hidden = new List<Neuron>[n];
 
-            numberOfInputs.Times(() => input
-                .As<IList<SignalSource>>()
-                .Add(new SignalSource()));
+            for (int i = 0; i < numberOfInputs; i++)
+                input.As<IList<SignalSource>>().Add(new SignalSource());
 
-            numberOfOutputs.Times(() => output
-                .As<IList<Neuron>>()
-                .Add(new Neuron { CellType = CellType.Output }));
+            for (int i = 0; i < numberOfOutputs; i++)
+                output.As<IList<Neuron>>().Add(new Neuron { CellType = CellType.Output });
 
-            n.Times(k =>
-                        {
-                            hidden[k] = new List<Neuron>();
-                            numberOfNeuronInHiddenLayers[k].Times(
-                                () => hidden[k]
-                                          .As<IList<Neuron>>()
-                                          .Add(new Neuron { CellType = CellType.Hidden}));
-                        });
+            for (int k = 0; k < n; k++)
+            {
+                hidden[k] = new List<Neuron>();
+
+                int q = numberOfNeuronInHiddenLayers[k];
+
+                for (int j = 0; j < q; j++)
+                    hidden[k].As<IList<Neuron>>().Add(new Neuron { CellType = CellType.Hidden });
+            }
             #endregion
 
             #region Creating connectors
@@ -58,16 +56,17 @@ namespace NeuroNet.Core.Neuronets
             allLayers[0] = input;
             allLayers[n + 1] = output;
 
-            n.Times( i => allLayers[i + 1] = hidden[i]);
+            for (int i = 0; i < n; i++)
+                allLayers[i + 1] = hidden[i];
 
             for (int i = n + 1; i > 0; i--)
             {
                 int currentLayer = i;
                 int previousLayer = i - 1;
 
-                foreach (var outputCell in allLayers[currentLayer])
+                foreach (Cell outputCell in allLayers[currentLayer])
                 {
-                    foreach (var inputCell in allLayers[previousLayer])
+                    foreach (Cell inputCell in allLayers[previousLayer])
                     {
                         outputCell
                             .As<IHaveInputs>()
@@ -79,13 +78,13 @@ namespace NeuroNet.Core.Neuronets
             #endregion
             
             return new NTirePerceptron
-                       {
-                           _amountOfHiddenLayers = n,
-                           Input = input, 
-                           Hidden = hidden, 
-                           Output = output,
-                           Cells = allLayers.UnionArray()
-                       };
+            {
+                _amountOfHiddenLayers = n,
+                Input = input,
+                Hidden = hidden,
+                Output = output,
+                Cells = allLayers.SelectMany(x => x).ToArray(),
+            };
         }
 
         public override void SetInput(double[] inputVector)
@@ -93,10 +92,7 @@ namespace NeuroNet.Core.Neuronets
             int inputCount = Input.Count();
 
             if (inputVector.GetLength(0) != inputCount)
-            {
-                throw new Exception("Dimensions of input vector and " +
-                                    "amount of input of network must be equal");
-            }
+                throw new Exception("Dimensions of input vector and amount of input of network must be equal");
 
             for (int i = 0; i < inputCount; i++)
             {
@@ -108,17 +104,13 @@ namespace NeuroNet.Core.Neuronets
 
         public override void RecalculateAllSignals()
         {
-            _amountOfHiddenLayers
-                .Times(i =>
-                           {
-                               foreach (var neuron in Hidden[i])
-                               {
-                                   neuron.RecalculateSignal();
-                               }
-                           });
+            for (int i = 0; i < _amountOfHiddenLayers; i++)
+            {
+                foreach (Neuron neuron in Hidden[i])
+                    neuron.RecalculateSignal();
+            }
 
-
-            foreach (var neuron in Output)
+            foreach (Neuron neuron in Output)
             {
                 neuron.RecalculateSignal();
             }
